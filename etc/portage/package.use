@@ -1,0 +1,90 @@
+app-editors/vim         cscope 
+dev-vcs/git		cvs subversion
+
+media-video/mplayer 		amr dts ftp rar nas srt vpx x264 xvid xvmc -linguas_zh_CN
+
+app-emulation/xen-tools		hvm ioemu screen qemu xend
+app-emulation/virtualbox	vnc
+app-emulation/wine		fontconfig
+
+sys-apps/man-pages		-linguas_zh_CN
+dev-vcs/subversion		-dso perl
+sys-auth/pambase		consolekit
+
+sys-apps/kexec-tools		lzma
+
+x11-base/xorg-server		kdrive	
+app-text/texlive		doc extra latex3 xetex publishers science
+app-text/texlive-core		xetex
+media-libs/freetype		kpathsea
+app-text/lcdf-typetools		kpathsea
+app-emulation/qemu-kvm          kvm fdt qemu-ifup spice xen xattr
+nec-misc/curl			ssl
+sys-auth/consolekit   		policykit 
+net-misc/curl			gnutls
+
+net-p2p/mldonkey		-gtk bittorrent
+
+media-libs/libpng		apng
+
+media-libs/gd			fontconfig
+app-portage/layman		git 
+
+sys-fs/lvm2			-lvm1
+
+dev-python/PyQt4		sql webkit declarative
+kde-base/kopete			msn
+kde-base/krdc			vnc rdesktop
+
+sys-devel/llvm			llvm-gcc ocaml
+sys-devel/llvm-gcc		objc
+sys-devel/gcc			-gtk
+
+dev-lang/python			-tk
+
+>=dev-lang/python-2.7.2-r2	sqlite
+
+dev-util/scons			doc
+
+app-editors/emacs		toolkit-scroll-bars xft
+sys-block/parted		device-mapper
+
+www-apps/lxr			mysql
+
+dev-db/mysql			embedded
+virtual/mysql			embedded
+
+media-sound/amarok		ipod mp3tunes
+
+media-video/ffmpeg		amr network vaapi vpx
+virtual/ffmpeg			vaapi
+media-sound/mpd			cue inotify zip
+media-plugins/audacious-plugins	cue
+
+media-libs/libgpod		ios
+
+sys-libs/zlib			minizip
+sys-apps/pciutils		-zlib
+
+app-text/texlive		context luatex tex4ht
+
+app-emulation/vmware-workstation	vmware-tools
+
+x11-libs/libdrm				libkms
+
+cross-arm-eabi/binutils -selinux -multilib
+cross-arm-eabi/gcc -selinux -boundschecking -d -gtk -gcj -libffi -mudflap -objc -objc++ -objc-gc -fortran nocxx -cxx -openmp -multilib
+cross-arm-eabi/newlib -selinux -multilib
+
+cross-i686-pc-mingw32/gdb sys-devel gdb
+cross-i686-pc-mingw32/insight dev-util insight
+cross-i686-pc-mingw32/binutils -cxx nocxx -selinux -multilib
+cross-i686-pc-mingw32/w32api -cxx nocxx -selinux -multilib
+cross-i686-pc-mingw32/mingw-runtime -cxx nocxx -selinux -multilib
+cross-i686-pc-mingw32/gcc -cxx nocxx -selinux -boundschecking -d -gtk -gcj -libffi -mudflap -objc -objc++ -objc-gc -multilib
+cross-powerpc-softfloat-linux-gnu/gdb sys-devel gdb
+cross-powerpc-softfloat-linux-gnu/insight dev-util insight
+cross-powerpc-softfloat-linux-gnu/binutils -selinux -multilib
+cross-powerpc-softfloat-linux-gnu/linux-headers -selinux -multilib
+cross-powerpc-softfloat-linux-gnu/glibc -selinux -multilib
+cross-powerpc-softfloat-linux-gnu/gcc -selinux -boundschecking -d -gtk -gcj -libffi -mudflap -objc -objc++ -objc-gc -multilib

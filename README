@@ -1,0 +1,14 @@
+For /etc/make.conf, please note:
+
+use -jX, where X should be reasonable for nCores of current system
+USE flags must be tuned for your own system.
+
+Profile: ~amd64, kde desktop
+
+Cool stuff: Together with kernel: https://github.com/wangbj/kernel-config
+The gentoo system can be used for:
+
+- kvm host / kvm guest
+- xen dom0 / xen domU
+- hyper-v guest
+- virtualbox guest
