@@ -1,0 +1,104 @@
+app-editors/vim         cscope 
+dev-vcs/git		cvs subversion
+
+media-video/mplayer 		aalib amr cpudetection doc dts ftp rar nas srt vpx x264 xvid xvmc -linguas_zh_CN
+
+app-emulation/xen-tools		hvm screen qemu
+app-emulation/xen		pae efi
+app-emulation/virtualbox	vnc
+app-emulation/wine		fontconfig
+
+sys-apps/man-pages		-linguas_zh_CN
+dev-vcs/subversion		-dso perl
+
+net-misc/openssh		-ldap -kerberos
+
+media-libs/mesa			xa g3dvl xvmc gbm openvg xorg
+x11-libs/cairo			openvg
+
+app-text/texlive		doc extra latex3 xetex publishers science
+app-text/texlive-core		xetex
+
+media-libs/freetype		kpathsea auto-hinter infinality
+
+app-text/lcdf-typetools		kpathsea
+app-emulation/qemu		kvm qemu-ifup fdt spice xen xattr virtfs
+nec-misc/curl			ssl
+sys-auth/consolekit   		policykit 
+net-misc/curl			gnutls
+net-misc/openvpn		iproute2
+
+sys-firmware/ipxe		undi iso
+
+net-analyzer/wireshark		-gtk2 -gtk3 qt4
+
+x11-base/xorg-server		xnest
+
+net-fs/nfs-utils		nfsidmap nfsv41
+
+net-fs/cifs-utils		upcall
+
+app-portage/layman		git 
+
+sys-fs/lvm2			-lvm1
+
+sys-boot/grub			device-mapper mount
+
+dev-python/PyQt4		sql webkit declarative script
+kde-base/krdc			vnc rdesktop
+
+sys-devel/llvm			multitarget ocaml clang
+sys-devel/clang			multitarget
+sys-devel/gcc			-gtk
+
+sys-kernel/genkernel		-crypt
+
+dev-lang/python			-tk
+dev-lang/ghc			binary
+
+app-editors/emacs		toolkit-scroll-bars xft
+sys-block/parted		device-mapper
+
+# move x11-libs/qt-sql dev-qt/qtsql
+dev-qt/qtsql			mysql
+
+media-sound/amarok		ipod mp3tunes
+
+media-video/ffmpeg		aacplus faac amr cpudetection network vaapi vpx
+virtual/ffmpeg			vaapi
+media-sound/mpd			cue inotify zip
+media-plugins/audacious-plugins	cue
+
+media-libs/libgpod		ios
+
+media-plugins/alsa-plugins	ffmpeg
+
+sys-libs/zlib			minizip
+sys-apps/pciutils		-zlib
+
+app-text/texlive		context luatex tex4ht
+
+>=net-fs/samba-3.6.16		winbind
+
+cross-arm-eabi/binutils -selinux -multilib
+cross-arm-eabi/gcc -selinux -boundschecking -d -gtk -gcj -libffi -mudflap -objc -objc++ -objc-gc -fortran nocxx -cxx -openmp -multilib
+cross-arm-eabi/newlib -selinux -multilib
+
+cross-i686-pc-mingw32/gdb sys-devel gdb
+cross-i686-pc-mingw32/insight dev-util insight
+cross-i686-pc-mingw32/binutils -cxx nocxx -selinux -multilib
+cross-i686-pc-mingw32/w32api -cxx nocxx -selinux -multilib
+cross-i686-pc-mingw32/mingw-runtime -cxx nocxx -selinux -multilib
+cross-i686-pc-mingw32/gcc -cxx nocxx -selinux -boundschecking -d -gtk -gcj -libffi -mudflap -objc -objc++ -objc-gc -multilib
+cross-powerpc-softfloat-linux-gnu/gdb sys-devel gdb
+cross-powerpc-softfloat-linux-gnu/insight dev-util insight
+cross-powerpc-softfloat-linux-gnu/binutils -selinux -multilib
+cross-powerpc-softfloat-linux-gnu/linux-headers -selinux -multilib
+cross-powerpc-softfloat-linux-gnu/glibc -selinux -multilib
+cross-powerpc-softfloat-linux-gnu/gcc -selinux -boundschecking -d -gtk -gcj -libffi -mudflap -objc -objc++ -objc-gc -multilib
+# required by app-text/texlive-core-2013-r1[xetex]
+# required by dev-texlive/texlive-fontutils-2013
+# required by app-text/texlive-2013
+# required by @selected
+# required by @world (argument)
+>=media-libs/harfbuzz-9999 icu

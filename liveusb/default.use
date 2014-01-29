@@ -1,0 +1,40 @@
+app-editors/vim         cscope 
+dev-vcs/git		cvs subversion
+
+media-video/mplayer 		aalib amr cpudetection doc dts ftp rar nas srt vpx x264 xvid xvmc -linguas_zh_CN
+
+sys-apps/man-pages		-linguas_zh_CN
+dev-vcs/subversion		-dso perl
+
+net-misc/openssh		-ldap -kerberos
+
+x11-libs/cairo			openvg
+
+#media-libs/freetype		kpathsea auto-hinter infinality
+
+app-emulation/qemu		kvm qemu-ifup fdt spice xen xattr virtfs
+
+x11-base/xorg-server		xnest
+
+net-fs/nfs-utils		nfsidmap nfsv41
+net-fs/cifs-utils		upcall
+
+sys-fs/lvm2			-lvm1
+sys-boot/grub			device-mapper mount
+
+#dev-python/PyQt4		sql webkit declarative script
+
+media-libs/harfbuzz		icu
+
+sys-devel/llvm			multitarget ocaml clang
+sys-devel/clang			multitarget
+sys-devel/gcc			-gtk
+
+app-editors/emacs		toolkit-scroll-bars xft
+sys-block/parted		device-mapper
+
+media-video/ffmpeg		aacplus faac amr cpudetection network vaapi vpx
+media-plugins/alsa-plugins	ffmpeg
+
+#sys-libs/zlib			minizip
+#sys-apps/pciutils		-zlib
