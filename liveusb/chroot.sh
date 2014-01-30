@@ -7,7 +7,7 @@ domount ()
 		mount -t proc none proc
 		mount -t sysfs none sys
 		mount -o bind /dev dev
-		mount -t devpts none dev/pts
+		mount -t devpts none -o gid=5 dev/pts
 		mount -o bind /usr/portage usr/portage
 		mount -o bind /usr/src usr/src
 		mount -o bind /var/tmp var/tmp
