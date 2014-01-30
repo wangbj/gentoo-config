@@ -13,7 +13,10 @@ Set grub top directory
 
 install grub
 
-  grub2-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=gentoo --boot-directory=/boot/efi/EFI --recheck --debug
+  grub2-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=grub --boot-directory=/boot/efi/EFI --recheck --debug 
+
+grub efi startup
+  modify: /boot/efi/startup.nsh
 
 generate grub.cfg
 

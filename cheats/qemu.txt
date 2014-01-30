@@ -1,0 +1,44 @@
+sudo qemu-system-x86_64 -enable-kvm -m 256 -drive file=wheezy.img,if=virtio -net nic,model=virtio,macaddr=fe:00:36:79:01:01 -net tap,script=/etc/qemu/qemu-ifup -boot c -vnc 192.168.1.11:21
+
+sudo qemu-system-x86_64 -enable-kvm -m 256 -drive file=wheezy.img,if=virtio -net nic,model=virtio,macaddr=fe:00:36:79:01:01 -net nic,model=rtl8139,vlan=1,macaddr=fe:00:36:79:01:05 -net tap,script=/etc/qemu/qemu-ifup -boot c -vnc 192.168.1.11:21
+
+sudo qemu-system-x86_64 -enable-kvm -m 256 -kernel ${HOME}/kernels/2.6.39.2/vmlinuz-2.6.39.2 -initrd ${HOME}/kernels/2.6.39.2/initrd.gz-2.6.39.2 -append 'root=/dev/vda1' -drive file=/home/wangbj/images/wheezy.img,if=virtio -fsdev local,id=share00,path=/home/wangbj,security_model=passthrough -device virtio-9p-pci,fsdev=share00,mount_tag=home -net nic,model=virtio,macaddr=fe:00:36:79:01:01 -net nic,model=rtl8139,vlan=1,macaddr=fe:00:36:79:01:05 -net tap,script=/etc/qemu/qemu-ifup -boot c -vnc 192.168.1.11:21
+
+sudo qemu-system-x86_64 -enable-kvm -m 256 -kernel kernel-genkernel-x86_64-3.0.0-rc6 -initrd initramfs-genkernel-x86_64-3.0.0-rc6 -append 'root=/dev/vda1' -drive file=/home/wangbj/images/wheezy.img,if=virtio -fsdev local,id=share00,path=/home/wangbj,security_model=passthrough -device virtio-9p-pci,fsdev=share00,mount_tag=home -net nic,model=virtio,macaddr=fe:00:36:79:01:01 -net tap,script=/etc/qemu/qemu-ifup -boot c -vnc 192.168.1.11:21
+
+sudo qemu-system-x86_64 -enable-kvm -m 256 -drive file=/home/wangbj/images/wheezy.img,if=virtio -fsdev local,id=share00,path=${HOME},security_model=passthrough -device virtio-9p-pci,fsdev=share00,mount_tag=home -net nic,model=virtio,macaddr=fe:00:36:79:01:01 -net tap,script=/etc/qemu/qemu-ifup -boot c -vnc 192.168.1.11:21
+
+sudo qemu-system-x86_64 -enable-kvm -m 256 -drive file=/home/wangbj/images/archlinux_i386.img,if=virtio -fsdev local,id=share00,path=${HOME},security_model=passthrough -device virtio-9p-pci,fsdev=share00,mount_tag=home -net nic,model=virtio,macaddr=fe:00:36:79:01:02 -net tap,script=/etc/qemu/qemu-ifup -boot c -vnc 192.168.1.11:22
+
+
+qemu-arm-versatile:
+
+sudo qemu-system-arm -M versatilepb -kernel /home/wangbj/kernels/vmlinuz-3.2.0-2-versatile -initrd /home/wangbj/kernels/initrd.img-3.2.0-2-versatile -append 'root=/dev/sda1' -drive file=/home/wangbj/images/wheezy-armv5tel.img -fsdev local,id=share00,path=${HOME},security_model=none -device virtio-9p-pci,fsdev=share00,mount_tag=home -net nic,macaddr=fe:00:36:79:01:03 -net tap,script=/etc/qemu/qemu-ifup -localtime -vnc :23
+
+sudo qemu-system-x86_64 -enable-kvm -m 256 -hda /dev/mapper/vg01-debian01 -fsdev local,id=share00,path=${HOME},security_model=none -device virtio-9p-pci,fsdev=share00,mount_tag=home -net nic,model=virtio,macaddr=fe:00:36:79:01:04 -net tap,script=/etc/qemu/qemu-ifup -boot c -vnc :24
+
+
+sudo qemu-system-x86_64 -enable-kvm -m 512 -drive file=oneiric-amd64.img,if=virtio -fsdev local,id=share00,path=${HOME},security_model=none -device virtio-9p-pci,fsdev=share00,mount_tag=home -net nic,model=virtio,macaddr=fe:00:36:79:01:05 -net tap,script=/etc/qemu/qemu-ifup -boot d -vnc 192.168.1.11:25
+
+sudo qemu-system-i386 -enable-kvm -m 512 -hda winxp.img -hdb wind.img -vnc :31 -boot c -net nic,model=e1000,macaddr=fe:00:36:79:01:81 -net tap,script=no -localtime
+sudo qemu-system-i386 -enable-kvm -m 2048 -hda winxp_dev.img -vnc :32 -boot c -net nic,model=e1000,macaddr=fe:00:36:79:01:82 -net tap,script=no -localtime
+
+
+sudo qemu-system-x86_64 -enable-kvm -smp 4 -m 4096 -drive file=~/images/ubuntu-1004-lts -fsdev local,id=share00,path=${HOME},security_model=none -device virtio-9p-pci,fsdev=share00,mount_tag=home -fsdev local,id=share01,path=/backup/home/p2p/mldonkey,security_model=none -device virtio-9p-pci,fsdev=share01,mount_tag=mldonkey -net nic,model=virtio,macaddr=fe:00:36:79:01:06 -net tap,script=/etc/qemu/qemu-ifup -boot c -vnc :26
+
+sudo qemu-system-x86_64 -kernel arch/x86/boot/bzImage -append 'root=/dev/nfs rw nfsroot=192.168.1.11:/home/nfs/gentoo-dev ip=on' -enable-kvm -smp 2 -m 512 -net nic,model=e1000,macaddr=fe:00:36:79:01:97 -net tap,script=/etc/qemu/qemu-ifup -boot c -vnc :27
+
+sudo qemu-system-x86_64 -enable-kvm -m 256 -hda /dev/mapper/vg01-debian01 -fsdev local,id=share00,path=${HOME},security_model=none -device virtio-9p-pci,fsdev=share00,mount_tag=home -fsdev local,id=share01,path=/backup/home/p2p/mldonkey,security_model=none -device virtio-9p-pci,fsdev=share01,mount_tag=mldonkey -net nic,model=virtio,macaddr=fe:00:36:79:01:04 -net tap,script=/etc/qemu/qemu-ifup -boot c -vnc :28
+
+sudo qemu-system-x86_64 -kernel /boot/kernel-genkernel-x86_64-3.10.4-gentoo -initrd /boot/initramfs-genkernel-x86_64-3.10.4-gentoo -enable-kvm -m 1024 -drive file=~/images/gentoo-amd64-selinux.ext4 -net nic,model=virtio,macaddr=fe:00:36:79:01:07 -net tap,script=/etc/qemu/qemu-ifup -vnc :29
+
+# dual disk
+qemu-system-x86_64 -enable-kvm -m 2048 -vga qxl -kernel gentoo/boot/kernel-genkernel-x86_64-3.13.0-gentoo-r1 -initrd gentoo/boot/initramfs-genkernel-x86_64-3.13.0-gentoo-r1 -append 'root=/dev/vda^Co rootfs_type=ext4' -drive file=/home/wangbj/images/gentoo.ext4,if=virtio,readonly,index=1 -drive file=/home/wangbj/images/udisk.img,if=virtio,index=0 -redir tcp:2222::22  -vnc :21
+
+
+# user net, port redir
+qemu-system-x86_64 -enable-kvm -m 2048 -vga qxl -L . -bios OVMF.fd  -drive file=~/images/udisk.img,if=virtio -redir tcp:2222::22 -vnc :21
+
+
+# virtio-scsi
+qemu-system-x86_64 -enable-kvm -m 2048 -vga qxl -L . -bios OVMF.fd  -drive if=none,id=hd,file=/home/wangbj/images/udisk.img -device virtio-scsi-pci,id=scsi  -device scsi-hd,drive=hd -redir tcp:2222::22 -vnc :21
