@@ -1,16 +1,4 @@
-#! /bin/sh                                                                                                                                                                                                                                   
-                                                                                                                                                                                                                                             
-if [ $# != 2 ]; then
-	echo $0 "<mount|umount> <directory>"
-else
-	if [ "x"$1 == "xmount" ]; then
-		domount $2
-	elif [ "x"$1 == "xumount" ]; then
-		doumount $2
-	else
-		echo $0 "<mount|umount> <directory>"
-	fi
-fi
+#! /bin/bash
 
 domount ()
 {
@@ -39,4 +27,16 @@ doumount()
 		echo "directory $1 doesn't exist"
 	fi
 }
+
+if [ $# != 2 ]; then
+	echo $0 "<mount|umount> <directory>"
+else
+	if [ "x"$1 == "xmount" ]; then
+		domount $2
+	elif [ "x"$1 == "xumount" ]; then
+		doumount $2
+	else
+		echo $0 "<mount|umount> <directory>"
+	fi
+fi
 
