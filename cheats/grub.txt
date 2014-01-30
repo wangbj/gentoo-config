@@ -1,0 +1,55 @@
+
+Set root direcotry (linux):
+    set root=(hd0,gpt3)
+
+module to load
+  insmod part_gpt
+  insmod ext2
+  insmod all_video
+  insmod gfxterm
+
+Set grub top directory
+    set prefix=(hd0,gpt2)/efi/grub
+
+install grub
+
+  grub2-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=gentoo --boot-directory=/boot/efi/EFI --recheck --debug
+
+generate grub.cfg
+
+  grub2-mkconfig -o <path>/grub.cfg
+
+
+standalone grub:
+   grub2-mkstandalone -d /usr/lib/grub/x86_64-efi/ -O x86_64-efi --fonts="unicode" -o grub2.efi  /boot/grub/grub.cfg=/tftpboot/netgrub.cfg 
+
+grub boot from network/efi
+ set timeout=5
+
+# linux (tftp)/vmlinuz
+menuentry 'Linux diskless' --class gentoo --class gnu-linux --class gnu --class os {
+        insmod net
+        insmod efinet
+        insmod tftp
+        insmod http
+        insmod gzio
+        insmod part_gpt
+
+        insmod efi_gop
+        insmod efi_uga
+
+
+        set net_default_server=192.168.1.1
+
+        net_add_addr eno0 efinet0 192.168.1.81
+
+        echo 'Network status: '
+        net_ls_cards
+        net_ls_addr
+        net_ls_routes
+
+        echo 'Loading Linux ...'
+        linux (tftp)/vmlinuz root=/dev/nfs rw nfsroot=192.168.1.11:/exports/nfs/gentoo ip=on
+}
+
+--

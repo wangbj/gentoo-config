@@ -10,23 +10,18 @@ net-misc/openssh		-ldap -kerberos
 
 x11-libs/cairo			openvg
 
-#media-libs/freetype		kpathsea auto-hinter infinality
-
 app-emulation/qemu		kvm qemu-ifup fdt spice xen xattr virtfs
 
-x11-base/xorg-server		xnest
-
 net-fs/nfs-utils		nfsidmap nfsv41
-net-fs/cifs-utils		upcall
+
+x11-base/xorg-server		xnest
 
 sys-fs/lvm2			-lvm1
 sys-boot/grub			device-mapper mount
 
-#dev-python/PyQt4		sql webkit declarative script
-
 media-libs/harfbuzz		icu
 
-sys-devel/llvm			multitarget ocaml clang
+sys-devel/llvm			multitarget clang
 sys-devel/clang			multitarget
 sys-devel/gcc			-gtk
 
@@ -35,6 +30,3 @@ sys-block/parted		device-mapper
 
 media-video/ffmpeg		aacplus faac amr cpudetection network vaapi vpx
 media-plugins/alsa-plugins	ffmpeg
-
-#sys-libs/zlib			minizip
-#sys-apps/pciutils		-zlib
