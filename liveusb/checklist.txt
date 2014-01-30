@@ -1,0 +1,9 @@
+modify fstab
+update grub
+hostname?
+enable networkmanager
+enable kdm
+username?
+rm /etc/ssh/certs*
+
+install grub
