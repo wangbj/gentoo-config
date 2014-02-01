@@ -47,3 +47,5 @@ qemu-system-x86_64 -enable-kvm -m 2048 -vga qxl -L . -bios OVMF.fd  -drive if=no
 qemu-system-x86_64 -enable-kvm -m 2048 -vga qxl -L . -bios OVMF.fd  -drive if=none,id=hd,snapshot=on,file=/home/wangbj/images/liveusb.img -device virtio-scsi-pci,id=scsi  -device scsi-hd,drive=hd -snapshot  -redir tcp:2222::22  -spice port=5930,disable-ticketing
   client then:
      spicec -h <hostname> -p <portnum>
+
+qemu-system-x86_64 -enable-kvm -m 8192 -smp 4 -vga qxl -L . -bios OVMF.fd -drive if=none,id=hd,snapshot=off,file=/home/wangbj/images/liveusb.img -device virtio-scsi-pci,id=scsi  -device scsi-hd,drive=hd -device virtio-net-pci,romfile=,netdev=mynet0,mac=fe:40:36:79:01:02 -netdev tap,script=/etc/qemu/qemu-ifup,id=mynet0 -snapshot -vnc :31
