@@ -55,3 +55,6 @@ qemu-system-x86_64 -enable-kvm -device virtio-net-pci,netdev=mynet0,mac=fe:00:36
 
 # command line to bringup openwrt image: (ahci mode)
 qemu-system-x86_64 -enable-kvm -M q35  -m 128 -drive id=disk,file=openwrt-x86_64-combined-squashfs.img,if=none -device ahci,id=ahci -device ide-drive,drive=disk,bus=ahci.0  -snapshot
+
+# efi/diskless
+qemu-system-x86_64 -enable-kvm -m 2048 -smp 2 -L . -bios OVMF.fd -device virtio-net-pci,romfile=,netdev=mynet0,mac=fe:40:36:79:01:01 -netdev tap,id=mynet0,helper=/usr/libexec/qemu-bridge-helper -vnc :31
