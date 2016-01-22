@@ -2,6 +2,9 @@
 (setq inhibit-startup-message t) 
 (column-number-mode t)
 
+(add-to-list 'default-frame-alist '(font . "Source Code Pro-10" ))
+(set-face-attribute 'default t :font "Source Code Pro-10" )
+
 (cua-mode 1)
 
 ;; recursively add ~/.emacs.d/lisp
